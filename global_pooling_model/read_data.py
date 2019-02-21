@@ -6,6 +6,9 @@ import numpy as np
 from scipy.spatial import cKDTree
 import pickle
 from Parameters import Parameters
+
+BASE_DIR = '/home/code/gcnbase/'
+
 para = Parameters()
 def farthestSampling(file_names, NUM_POINT):
     file_indexs = np.arange(0, len(file_names))
@@ -42,7 +45,6 @@ def load_data(NUM_POINT, sampleType):
     #BASE_DIR= os.path.abspath(os.path.dirname(os.getcwd()))
     
     #print BASE_DIR
-    BASE_DIR = '/media/bunny/_harddisk/data/paper/pointgcn/gcnbase/'
     TRAIN_FILES = utils.getDataFiles(BASE_DIR,
         os.path.join(BASE_DIR, 'data/modelnet40_ply_hdf5_2048/train_files.txt'))
     TEST_FILES = utils.getDataFiles(BASE_DIR,
@@ -66,12 +68,12 @@ def load_data(NUM_POINT, sampleType):
 def prepareGraph(inputData, neighborNumber, pointNumber, dataType):
     scaledLaplacianDict = dict()
     #baseDir = os.path.dirname(os.path.abspath(__file__))
-    baseDir ='/media/bunny/_harddisk/data/paper/pointgcn/gcnbase'  
+      
     #baseDir= os.path.abspath(os.path.dirname(os.getcwd()))
     if para.dataset == 'ModelNet40':
-        fileDir =  baseDir+ '/graph/' + dataType+'_pn_'+str(pointNumber)+'_nn_'+str(neighborNumber)
+        fileDir =  BASE_DIR+ '/graph/' + dataType+'_pn_'+str(pointNumber)+'_nn_'+str(neighborNumber)
     elif para.dataset == 'ModelNet10':
-        fileDir =  baseDir+ '/graph_ModelNet10/' + dataType+'_pn_'+str(pointNumber)+'_nn_'+str(neighborNumber)
+        fileDir =  BASE_DIR+ '/graph_ModelNet10/' + dataType+'_pn_'+str(pointNumber)+'_nn_'+str(neighborNumber)
     else:
         print ("Please enter a valid dataset")
         

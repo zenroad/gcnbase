@@ -19,8 +19,8 @@ class Parameters():
         self.learningRate = 12e-4
         self.dataset = 'ModelNet40'
         self.weighting_scheme = 'weighted'
-        self.modelDir = '/media/bunny/_harddisk/data/paper/pointgcn/gcnbase/global_pooling_model/model/'
-        self.logDir = '/media/bunny/_harddisk/data/paper/pointgcn/gcnbase/global_pooling_model/log/'
+        self.modelDir = '/home/code/gcnbase/global_pooling_model/model/'
+        self.logDir = '/home/code/gcnbase/global_pooling_model/log/'
         self.fileName = '0112_1024_40_cheby_4_3_modelnet40_max_var_first_second_layer'
         self.weight_scaler = 40#50
 

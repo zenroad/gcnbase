@@ -35,7 +35,7 @@ with tf.Graph().as_default():
     if para.dataset == 'ModelNet40':
         inputTrain, trainLabel, inputTest, testLabel = load_data(pointNumber, samplingType)
     elif para.dataset == 'ModelNet10':
-        ModelNet10_dir = '/media/bunny/_harddisk/data/paper/pointgcn/gcnbase/data/'
+        ModelNet10_dir = '/home/code/gcnbase/data/'
         with open(ModelNet10_dir+'input_data','rb') as handle:
             a = pickle.load(handle)
         inputTrain, trainLabel, inputTest, testLabel = a 
