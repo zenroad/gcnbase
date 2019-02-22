@@ -173,7 +173,7 @@ def evaluateOneEpoch(inputCoor, inputGraph, inputLabel, para, sess, trainOperaio
         graphTest = graphTest.tocsr()
         labelBinarize = label_binarize(labelTest, classes=[i for i in range(para.outputClassN)])
         test_batch_size = para.testBatchSize
-        for testBatchID in range(len(labelTest) / test_batch_size):
+        for testBatchID in range(len(labelTest) // test_batch_size):
             start = testBatchID * test_batch_size
             end = start + test_batch_size
             batchCoor, batchGraph, batchLabel = get_mini_batch(xTest, graphTest, labelBinarize, start, end)
