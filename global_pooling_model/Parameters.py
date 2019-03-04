@@ -9,8 +9,8 @@ class Parameters():
         self.gcn_2_filter_n = 1000
         self.gcn_3_filter_n = 1000
         self.fc_1_n = 600
-        self.chebyshev_1_Order = 4
-        self.chebyshev_2_Order = 3
+        self.chebyshev_1_Order = 1
+        self.chebyshev_2_Order = 1
         self.keep_prob_1 = 0.9 #0.9 original
         self.keep_prob_2 = 0.55
         self.batchSize = 28
